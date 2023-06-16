@@ -31,7 +31,6 @@ add_subdirectory(${DSP}/Source EXCLUDE_FROM_ALL)
 # rest of your project
 add_executable(pico_inference_app
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/dsp_pipeline.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/ml_model.cpp
 )
 
@@ -52,3 +51,4 @@ pico_add_extra_outputs(pico_inference_app)
 
 add_subdirectory("lib/microphone-library-for-pico" EXCLUDE_FROM_ALL)
 add_subdirectory("lib/pico-tflmicro" EXCLUDE_FROM_ALL)
+
