@@ -13,17 +13,25 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-// This data was extracted from the larger feature data held in
-// no_features_data.cc and consists of the 29th spectrogram slice of 43 values.
-// This is the expected result of running the sample data in
-// no_30ms_sample_data.cc through the preprocessing pipeline.
+#ifndef TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MAIN_FUNCTIONS_H_
+#define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MAIN_FUNCTIONS_H_
 
-#ifndef TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_NO_FEATURE_DATA_SLICE_H_
-#define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_NO_FEATURE_DATA_SLICE_H_
+// Expose a C friendly interface for main functions.
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#include <cstdint>
+// Initializes all data needed for the example. The name is important, and needs
+// to be setup() for Arduino compatibility.
+void setup();
 
-constexpr int g_no_feature_data_slice_size = 40;
-extern const int8_t g_no_feature_data_slice[];
+// Runs one iteration of data gathering and inference. This should be called
+// repeatedly from the application code. The name needs to be loop() for Arduino
+// compatibility.
+void loop();
 
-#endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_NO_FEATURE_DATA_SLICE_H_
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MAIN_FUNCTIONS_H_
