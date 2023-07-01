@@ -26,11 +26,11 @@ void RespondToCommand(tflite::ErrorReporter* error_reporter,
     TF_LITE_REPORT_ERROR(error_reporter, "Heard %s (%d) @%dms", found_command,
                          score, current_time);
 
-    if (found_command == "yes"){
+    if (found_command == "on"){
       //turn led on
       gpio_put(LED_PIN, 1);
     }
-    else if (found_command == "no") {
+    else if (found_command == "off") {
       //turn led off
       gpio_put(LED_PIN, 0);
     }
